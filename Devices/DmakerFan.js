@@ -196,7 +196,7 @@ DmakerFanAccessory.prototype.getServices = function() {
              }.bind(this))
 	     .on('set', function(value, callback) {
 		  that.platform.log.debug("[MiFanPlatform][DEBUG]DmakerFanAccessory - RotationDirection - setRotationDirection: " + value);
-		  that.device.call("s_mode", [value ? "normal" : "nature"]).then(result => {
+		  that.device.call("s_mode", [value ? "nature" : "normal"]).then(result => {
 			that.platform.log.debug("[MiFanPlatform][DEBUG]DmakerFanAccessory - RotationDirection - setRotationDirection Result: " + result);
                         if(result[0] === "ok") {
                              callback(null);
